@@ -21,10 +21,7 @@
 
     <dependencies>
 <!--        wick-need-->
-        <dependency>
-            <groupId>com.peppa</groupId>
-            <artifactId>wick-core</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>com.peppa</groupId>

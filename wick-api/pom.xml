@@ -18,6 +18,17 @@
     </properties>
 
 
+    <dependencies>
+<!--        wiki-need-->
+        <dependency>
+            <groupId>com.peppa</groupId>
+            <artifactId>wick-core</artifactId>
+        </dependency>
+
+
+
+    </dependencies>
+
 
     <build>
         <plugins>
