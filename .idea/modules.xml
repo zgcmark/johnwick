@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wick.iml" filepath="$PROJECT_DIR$/wick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-api/wick-api.iml" filepath="$PROJECT_DIR$/wick-api/wick-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-client/wick-client.iml" filepath="$PROJECT_DIR$/wick-client/wick-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-common/wick-common.iml" filepath="$PROJECT_DIR$/wick-common/wick-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-config/wick-config.iml" filepath="$PROJECT_DIR$/wick-config/wick-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-core/wick-core.iml" filepath="$PROJECT_DIR$/wick-core/wick-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wick-naming/wick-naming.iml" filepath="$PROJECT_DIR$/wick-naming/wick-naming.iml" />
+    </modules>
+  </component>
+</project>
