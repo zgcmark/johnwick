@@ -11,5 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="wick-api" />
+    <orderEntry type="module" module-name="wick-core" />
+    <orderEntry type="module" module-name="wick-config" />
   </component>
 </module>

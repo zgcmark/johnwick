@@ -12,6 +12,20 @@
     <artifactId>wick-client</artifactId>
 
 
+    <dependencies>
+    <!--        wick-need-->
+
+
+    <dependency>
+        <groupId>com.peppa</groupId>
+        <artifactId>wick-api</artifactId>
+    </dependency>
+        <dependency>
+            <groupId>com.peppa</groupId>
+            <artifactId>wick-config</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -24,5 +38,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
