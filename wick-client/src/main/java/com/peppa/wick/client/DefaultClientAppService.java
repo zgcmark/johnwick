@@ -1,7 +1,9 @@
 package com.peppa.wick.client;
 
 import com.peppa.wick.api.AppService;
+import com.peppa.wick.api.exception.WickException;
 import com.peppa.wick.config.constant.PropertiesConstant;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Properties;
 
@@ -12,7 +14,13 @@ import java.util.Properties;
 //客户端默认实现
 public class DefaultClientAppService implements AppService {
 
+    private String namespace;
+
     private String serverList;
+
+    private String localCacheDir;
+
+    private int appPort;
 
     public DefaultClientAppService(String serverList) {
         this.serverList = serverList;
@@ -23,11 +31,47 @@ public class DefaultClientAppService implements AppService {
 
     public DefaultClientAppService(Properties properties) {
         init(properties);
+
     }
 
 
     //初始化客户端配置
     private void init(Properties properties) {
+        serverList=properties.getProperty(PropertiesConstant.SERVER_ADDR);
+        initPort(properties);
+        initLocalCacheDir(properties);
+        //TODO
+
+
+    }
+
+
+
+    //初始化本地缓存
+    private void initLocalCacheDir(Properties properties) {
+    if (StringUtils.isNotEmpty(properties.getProperty(PropertiesConstant.CACHE_DIR))){
+        localCacheDir=properties.getProperty(PropertiesConstant.CACHE_DIR);
+    }else {
+        localCacheDir = System.getProperty("user.home") + "/nacos/naming/" + namespace;
+
+    }
+
+
+    }
+
+
+    private void initPort(Properties properties) {
+        String port = properties.getProperty(PropertiesConstant.END_PORT);
+        if (StringUtils.isNotEmpty(port)){
+            appPort=Integer.parseInt(port);
+        }else {
+            appPort=8080;
+        }
+    }
+
+
+    @Override
+    public void registerInstance(String serverName, String ip, int port) throws WickException {
 
     }
 }

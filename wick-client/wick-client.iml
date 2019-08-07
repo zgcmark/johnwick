@@ -14,5 +14,6 @@
     <orderEntry type="module" module-name="wick-api" />
     <orderEntry type="module" module-name="wick-core" />
     <orderEntry type="module" module-name="wick-config" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
   </component>
 </module>
