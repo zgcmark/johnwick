@@ -3,6 +3,7 @@ package com.peppa.wick.client;
 import com.peppa.wick.api.AppService;
 import com.peppa.wick.api.exception.WickException;
 import com.peppa.wick.config.constant.PropertiesConstant;
+import com.peppa.wick.core.model.Instance;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Properties;
@@ -72,6 +73,15 @@ public class DefaultClientAppService implements AppService {
 
     @Override
     public void registerInstance(String serverName, String ip, int port) throws WickException {
+        Instance instance = new Instance();
+        instance.setIp(ip);
+        instance.setPort(port);
+        instance.setWeight(1);
+        startRegister(serverName,instance);
+    }
+
+
+    private void startRegister(String serverName, Instance instance) {
 
     }
 }

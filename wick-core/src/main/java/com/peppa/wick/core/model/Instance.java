@@ -18,6 +18,7 @@ public class Instance {
 
     private int port;
 
+    private Integer weight;
 
     private int status;
 
@@ -26,10 +27,14 @@ public class Instance {
 
     private Map<String, String> metadata = new HashMap<String, String>();
 
-    private String clusterName;
 
+    public Integer getWeight() {
+        return weight;
+    }
 
-
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
 
     public String getInstanceId() {
         return instanceId;
@@ -87,11 +92,5 @@ public class Instance {
         this.metadata = metadata;
     }
 
-    public String getClusterName() {
-        return clusterName;
-    }
 
-    public void setClusterName(String clusterName) {
-        this.clusterName = clusterName;
-    }
 }
