@@ -2,8 +2,12 @@ package com.peppa.wick.client;
 
 import com.peppa.wick.api.AppService;
 import com.peppa.wick.api.exception.WickException;
+import com.peppa.wick.client.heart.HeartInfo;
+import com.peppa.wick.client.heart.HeartbeatManager;
+import com.peppa.wick.client.tranport.ServerProxy;
 import com.peppa.wick.config.constant.PropertiesConstant;
 import com.peppa.wick.core.model.Instance;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Properties;
@@ -22,6 +26,13 @@ public class DefaultClientAppService implements AppService {
     private String localCacheDir;
 
     private int appPort;
+
+    private HeartbeatManager heartbeatManager;
+
+    private ServerProxy serverProxy;
+
+
+
 
     public DefaultClientAppService(String serverList) {
         this.serverList = serverList;
@@ -82,6 +93,16 @@ public class DefaultClientAppService implements AppService {
 
 
     private void startRegister(String serverName, Instance instance) {
-
+    //need first add heart
+        if (instance.isEnabled()) {
+            HeartInfo heartInfo = new HeartInfo();
+            heartInfo.setIp(instance.getIp());
+            heartInfo.setAppName(instance.getAppName());
+            heartInfo.setPort(instance.getPort());
+            heartInfo.setWeight(instance.getWeight());
+            heartbeatManager.addHeartInfo(serverName, heartInfo);
+            serverProxy.registerApp(serverName,instance);
+        }
+        //no sth to do
     }
 }
