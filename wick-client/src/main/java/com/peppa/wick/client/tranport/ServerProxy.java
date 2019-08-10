@@ -10,6 +10,7 @@ public class ServerProxy {
 
 
     public void registerApp(String serverName, Instance instance) {
+        //等我调研完raft就开始写这个
 
     }
 }
