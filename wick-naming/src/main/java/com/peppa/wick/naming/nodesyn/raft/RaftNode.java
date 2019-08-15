@@ -1,4 +1,4 @@
-package com.peppa.wick.naming.raft;
+package com.peppa.wick.naming.nodesyn.raft;
 
 import java.util.concurrent.atomic.AtomicLong;
 

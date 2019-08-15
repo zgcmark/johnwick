@@ -1,18 +1,61 @@
 package com.peppa.wick.naming.api;
 
+import com.peppa.wick.common.WickUrlContext;
+import com.peppa.wick.common.net.Response;
 import com.peppa.wick.naming.service.AppServerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author zhengguangchen
  */
 
 @RestController
+@RequestMapping(WickUrlContext.REQUEST_URL_V1_PRIX+"/instance")
 public class InstanceAPI {
 
     @Autowired
     private AppServerService appServerService;
+
+
+
+
+    //注册接口
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public Response<Integer> register(HttpServletRequest request) throws Exception {
+
+        return new Response().success();
+    }
+
+
+    //renew
+    @RequestMapping(value = "", method = RequestMethod.PUT)
+    public Response<Integer> renew(HttpServletRequest request) throws Exception {
+
+        return new Response().success();
+    }
+
+
+    //移除节点
+    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    public Response<Integer> remove(HttpServletRequest request) throws Exception {
+
+        return new Response().success();
+    }
+
+    //抑制节点
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public Response<Integer> isolation(HttpServletRequest request) throws Exception {
+
+        return new Response().success();
+    }
+
+
+
 
 
 
