@@ -10,6 +10,7 @@ import com.peppa.wick.core.model.Instance;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -89,6 +90,13 @@ public class DefaultClientAppService implements AppService {
         instance.setPort(port);
         instance.setWeight(1);
         startRegister(serverName,instance);
+    }
+
+
+    @Override
+    public List<Instance> getAllInstances(String serviceName) throws WickException {
+
+        return null;
     }
 
 
