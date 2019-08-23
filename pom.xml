@@ -13,6 +13,7 @@
         <module>wick-api</module>
         <module>wick-client</module>
         <module>wick-config</module>
+        <module>wick-naming</module>
     </modules>
     <name>wick</name>
     <description>Demo project for Spring Boot</description>
