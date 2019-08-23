@@ -1,4 +1,4 @@
-package com.peppa.wick.naming.nodesyn.sql;
+package com.peppa.wick.naming.nodes.theme.sql;
 
 /**
  * @author zhengguangchen

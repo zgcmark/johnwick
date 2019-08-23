@@ -1,4 +1,4 @@
-package com.peppa.wick.naming.nodesyn;
+package com.peppa.wick.naming.nodes;
 
 /**
  * node status

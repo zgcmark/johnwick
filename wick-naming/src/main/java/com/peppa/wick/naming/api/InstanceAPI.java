@@ -47,7 +47,7 @@ public class InstanceAPI {
         return new Response().success();
     }
 
-    //抑制节点
+    //隔离节点
     @RequestMapping(value = "isolation", method = RequestMethod.POST)
     public Response<Integer> isolation(HttpServletRequest request) throws Exception {
 
@@ -56,7 +56,12 @@ public class InstanceAPI {
 
 
 
+    //抑制节点
+    @RequestMapping(value = "list", method = RequestMethod.GET)
+    public Response<Integer> getAllInstance(HttpServletRequest request) throws Exception {
 
+        return new Response().success();
+    }
 
 
 
