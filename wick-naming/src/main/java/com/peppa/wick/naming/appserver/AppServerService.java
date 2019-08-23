@@ -1,4 +1,4 @@
-package com.peppa.wick.naming.service;
+package com.peppa.wick.naming.appserver;
 
 /**
  * @author zhengguangchen

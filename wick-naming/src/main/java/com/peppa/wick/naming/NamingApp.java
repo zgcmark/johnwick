@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.peppa.wick.naming.nodes.sql.mapper")
+@MapperScan("com.peppa.wick.naming.nodes.theme.sql.mapper")
 public class NamingApp {
 
     public static void main(String[] args) {

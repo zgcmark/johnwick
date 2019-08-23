@@ -2,7 +2,7 @@ package com.peppa.wick.naming.api;
 
 import com.peppa.wick.common.WickUrlContext;
 import com.peppa.wick.common.net.Response;
-import com.peppa.wick.naming.service.AppServerService;
+import com.peppa.wick.naming.appserver.AppServerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
