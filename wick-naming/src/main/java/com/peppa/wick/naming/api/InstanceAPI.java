@@ -33,7 +33,7 @@ public class InstanceAPI {
 
 
     //renew
-    @RequestMapping(value = "", method = RequestMethod.PUT)
+    @RequestMapping(value = "renew", method = RequestMethod.PUT)
     public Response<Integer> renew(HttpServletRequest request) throws Exception {
 
         return new Response().success();
@@ -41,14 +41,14 @@ public class InstanceAPI {
 
 
     //移除节点
-    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    @RequestMapping(value = "remove", method = RequestMethod.DELETE)
     public Response<Integer> remove(HttpServletRequest request) throws Exception {
 
         return new Response().success();
     }
 
     //抑制节点
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "isolation", method = RequestMethod.POST)
     public Response<Integer> isolation(HttpServletRequest request) throws Exception {
 
         return new Response().success();
