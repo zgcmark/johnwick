@@ -6,10 +6,12 @@ import com.peppa.wick.client.heart.HeartInfo;
 import com.peppa.wick.client.heart.HeartbeatManager;
 import com.peppa.wick.client.tranport.ServerProxy;
 import com.peppa.wick.config.constant.PropertiesConstant;
+import com.peppa.wick.core.event.EventDispatcher;
 import com.peppa.wick.core.model.Instance;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -20,25 +22,27 @@ import java.util.Properties;
 //客户端默认实现
 public class DefaultClientAppService implements AppService {
 
-    private String namespace;
 
-    private String serverList;
+    private String namespace="wick";
+
+    private List<String> serverList;
 
     private String localCacheDir;
 
-    private int appPort;
 
     private HeartbeatManager heartbeatManager;
 
     private ServerProxy serverProxy;
 
+    private EventDispatcher eventDispatcher;
 
 
 
-    public DefaultClientAppService(String serverList) {
-        this.serverList = serverList;
+
+
+    public DefaultClientAppService(String serverListStr) {
         Properties properties = new Properties();
-        properties.setProperty(PropertiesConstant.SERVER_ADDR,serverList);
+        properties.setProperty(PropertiesConstant.SERVER_ADDR,serverListStr);
         init(properties);
     }
 
@@ -50,10 +54,19 @@ public class DefaultClientAppService implements AppService {
 
     //初始化客户端配置
     private void init(Properties properties) {
-        serverList=properties.getProperty(PropertiesConstant.SERVER_ADDR);
-        initPort(properties);
+        serverList=Arrays.asList(properties.getProperty(PropertiesConstant.SERVER_ADDR).split(","));
+
         initLocalCacheDir(properties);
-        //TODO
+        //load event check
+        eventDispatcher=new EventDispatcher();
+        //init ServerProxy
+        String appIsolation = properties.getProperty(properties.getProperty(PropertiesConstant.APP_ISOLATION));
+        Boolean instanceIsolation=false;
+        if (StringUtils.isNotEmpty(appIsolation) && appIsolation.equals("true")){
+            instanceIsolation=true;
+        }
+        serverProxy=new ServerProxy(serverList,instanceIsolation);
+        //TODO 服务访问代理内容
 
 
     }
@@ -73,14 +86,7 @@ public class DefaultClientAppService implements AppService {
     }
 
 
-    private void initPort(Properties properties) {
-        String port = properties.getProperty(PropertiesConstant.END_PORT);
-        if (StringUtils.isNotEmpty(port)){
-            appPort=Integer.parseInt(port);
-        }else {
-            appPort=8080;
-        }
-    }
+
 
 
     @Override
