@@ -22,8 +22,12 @@ server:
 
 
 spring:
+  mvc:
+    view:
+      suffix: .html
+      static-path-pattern: /**
   resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/mp/
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/mp/,classpath:/view/
   datasource:
     url: jdbc:mysql://39.106.211.39:3306/wick-db?useUnicode=true&amp;characterEncoding=utf-8&allowMultiQueries=true
     username: root
