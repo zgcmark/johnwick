@@ -1,5 +1,6 @@
 package com.peppa.wick.naming.domain.admin;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * @Date: 2018-8-23$ 17:55$
  * @Description: 权限$
  */
-public class Permission {
+public class Permission implements Serializable {
     private String id;
     private String name;
     private String code;
