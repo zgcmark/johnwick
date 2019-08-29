@@ -1,4 +1,4 @@
-package com.peppa.wick.naming.domain.admin;
+package com.peppa.wick.naming.admin.domain;
 
 import java.io.Serializable;
 import java.util.Date;
