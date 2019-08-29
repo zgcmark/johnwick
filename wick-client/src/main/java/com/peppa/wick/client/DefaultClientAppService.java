@@ -65,7 +65,7 @@ public class DefaultClientAppService implements AppService {
         if (StringUtils.isNotEmpty(appIsolation) && appIsolation.equals("true")){
             instanceIsolation=true;
         }
-        serverProxy=new ServerProxy(serverList,instanceIsolation);
+        serverProxy=new ServerProxy(serverList,instanceIsolation,properties);
         //TODO 服务访问代理内容
 
 
