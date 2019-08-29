@@ -120,4 +120,4 @@ $(document).ready(function() {
             elem: '#flowImageTest img'
         });
     });
-}
+})
