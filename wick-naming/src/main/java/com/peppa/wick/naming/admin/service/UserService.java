@@ -11,10 +11,10 @@ import javax.validation.Valid;
  */
 public interface UserService {
 
-    public void save(@Valid User user);
+     void save(@Valid User user);
 
-    public void update(@Valid User user);
+     void update(@Valid User user);
 
-    public void remove(@Valid String  id);
+     void remove(@Valid String  id);
 
 }

@@ -9,10 +9,10 @@ import com.peppa.wick.naming.admin.domain.Role;
  */
 public interface RoleService {
 
-    public void save(Role role);
+     void save(Role role);
 
-    public void update(Role role);
+     void update(Role role);
 
-    public void remove(String  id);
+     void remove(String  id);
 
 }

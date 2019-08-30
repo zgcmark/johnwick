@@ -10,10 +10,10 @@ import com.peppa.wick.naming.admin.domain.Permission;
 public interface PermissionService {
 
 
-    public void save(Permission permission);
+     void save(Permission permission);
 
-    public void update(Permission permission);
+     void update(Permission permission);
 
-    public void remove(String  id);
+     void remove(String  id);
 
 }
