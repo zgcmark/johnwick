@@ -4,6 +4,7 @@ import com.peppa.wick.naming.admin.domain.Permission;
 import com.peppa.wick.naming.admin.mapper.PermissionMapper;
 import com.peppa.wick.naming.admin.service.PermissionService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.Resource;
@@ -17,6 +18,7 @@ import java.util.UUID;
  */
 @Service
 @Validated
+@Transactional
 public class PermissionServiceImpl implements PermissionService {
 
     @Resource
