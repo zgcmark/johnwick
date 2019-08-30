@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peppa.wick.naming.admin.mapper.PerMapper" >
+    <resultMap id="BaseResultMap" type="com.peppa.wick.naming.admin.domain.Role" >
+        <id column="id" property="id" />
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="parent_code" property="parentCode" />
+        <result column="description" property="description"/>
+        <result column="created_on" property="createdOn"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="modified_by" property="modifiedBy"/>
+        <result column="modified_on" property="modifiedOn"/>
+    </resultMap>
+
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select * from wick_role
+        where id = #{id}
+    </select>
+
+    <insert id="save" parameterType="com.peppa.wick.naming.admin.domain.Role" >
+      insert into wick_role (id, name, code,
+            parent_code, description, created_on,
+            created_by, modified_by, modified_on
+      )
+      values (#{id}, #{name}, #{code},
+            #{parentCode}, #{description},
+            #{createdOn}, #{createdBy}, #{modifiedBy},
+            #{modifiedOn}
+      )
+    </insert>
+
+    <update id="update" parameterType="com.peppa.wick.naming.admin.domain.Role" >
+        update wick_role
+            set name = #{name},
+              code = #{code},
+              parent_code = #{parentCode},
+              description = #{description},
+              created_on = #{createdOn},
+              created_by = #{createdBy},
+              modified_by = #{modifiedBy},
+              modified_on = #{modifiedOn}
+        where id = #{id}
+    </update>
+
+    <delete id="remove" parameterType="java.lang.String" >
+            delete from wick_role where id = #{id}
+    </delete>
+</mapper>

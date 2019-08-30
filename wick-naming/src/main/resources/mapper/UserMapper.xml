@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peppa.wick.naming.admin.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.peppa.wick.naming.admin.domain.User" >
+        <id column="id" property="id" />
+        <result column="login_name" property="loginName"/>
+        <result column="password" property="password"/>
+        <result column="user_name" property="userName"/>
+        <result column="mobile" property="mobile" />
+        <result column="email" property="email"/>
+        <result column="created_on" property="createdOn"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="modified_by" property="modifiedBy"/>
+        <result column="modified_on" property="modifiedOn"/>
+    </resultMap>
+
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select * from wick_user
+        where id = #{id}
+    </select>
+
+    <insert id="save" parameterType="com.peppa.wick.naming.admin.domain.User" >
+      insert into wick_user (id, login_name, password,
+            userName,mobile, email, created_on,
+            created_by, modified_by, modified_on
+      )
+      values (#{id}, #{loginName}, #{password},
+            #{userName}, #{mobile}, #{email},
+            #{createdOn}, #{createdBy}, #{modifiedBy},
+            #{modifiedOn}
+      )
+    </insert>
+
+    <update id="update" parameterType="com.peppa.wick.naming.admin.domain.User" >
+        update wick_user
+            set login_name = #{login_name},
+              password = #{password},
+              userName = #{userName},
+              mobile = #{mobile},
+              email = #{email},
+              created_on = #{createdOn},
+              created_by = #{createdBy},
+              modified_by = #{modifiedBy},
+              modified_on = #{modifiedOn}
+        where id = #{id}
+    </update>
+
+    <delete id="remove" parameterType="java.lang.String" >
+            delete from wick_user where id = #{id}
+    </delete>
+</mapper>

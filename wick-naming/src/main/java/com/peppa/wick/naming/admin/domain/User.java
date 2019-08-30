@@ -1,5 +1,9 @@
 package com.peppa.wick.naming.admin.domain;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,13 +15,33 @@ import java.util.Date;
 public class User implements Serializable {
 
     private String id;
+
+    @NotNull
+    @NotBlank
+    @Length(max=100)
     private String loginName;
+
+    @NotNull
+    @NotBlank
+    @Length(max=100)
     private String password;
+
+    @NotNull
+    @NotBlank
+    @Length(max=100)
     private String userName;
+
+    @Length(max=20)
     private String mobile;
+
+    @Length(max=50)
     private String email;
     private Date createdOn;
+
+    @Length(max=100)
     private String createdBy;
+
+    @Length(max=100)
     private String modifiedBy;
     private Date modifiedOn;
 
