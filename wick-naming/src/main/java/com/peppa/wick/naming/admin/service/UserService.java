@@ -2,8 +2,6 @@ package com.peppa.wick.naming.admin.service;
 
 import com.peppa.wick.naming.admin.domain.User;
 
-import javax.validation.Valid;
-
 /**
  * @Author: DM
  * @Date: 2019-8-30$ 15:28$
@@ -11,10 +9,10 @@ import javax.validation.Valid;
  */
 public interface UserService {
 
-     void save(@Valid User user);
+     void save(User user);
 
-     void update(@Valid User user);
+     void update(User user);
 
-     void remove(@Valid String  id);
+     void remove(String  id);
 
 }
