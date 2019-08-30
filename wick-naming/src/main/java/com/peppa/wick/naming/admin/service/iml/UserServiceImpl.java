@@ -17,7 +17,6 @@ import java.util.UUID;
  * @Description: $
  */
 @Service
-@Validated
 @Transactional
 public class UserServiceImpl implements UserService {
 

@@ -1,10 +1,5 @@
 package com.peppa.wick.naming.admin.domain;
 
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,28 +7,14 @@ import java.util.Date;
  * @Date: 2018-8-23$ 17:55$
  * @Description: 权限$
  */
-public class Permission implements Serializable {
+public class Permission {
     private String id;
-
-    @NotNull
-    @NotBlank
-    @Length(max=50)
     private String name;
-
-    @NotNull
-    @NotBlank
-    @Length(max=50)
     private String code;
     private String parentCode;
-
-    @Length(max=100)
     private String description;
     private Date createdOn;
-
-    @Length(max=100)
     private String createdBy;
-
-    @Length(max=100)
     private String modifiedBy;
     private Date modifiedOn;
 
